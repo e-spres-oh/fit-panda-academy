@@ -1,0 +1,42 @@
+import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import React, { useContext, useRef, useState } from "react";
+import { Colors } from "react-native/Libraries/NewAppScreen";
+import { MyContext } from "../store/myStore";
+
+const LoginScreen = ({ navigation }: any) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const myStore = useContext(MyContext);
+  return (
+    <View>
+      <Text>UserName</Text>
+      <TextInput
+        onChangeText={(text) => setUsername(text)}
+        style={{ margin: 5, borderWidth: 1, borderColor: Colors.gray }}
+      />
+      <Text>Password</Text>
+      <TextInput
+        onChangeText={(text) => setPassword(text)}
+        style={{ margin: 5, borderWidth: 1, borderColor: Colors.gray }}
+      />
+      <Button
+        title="Login"
+        onPress={async () => {
+          await myStore.login(username, password);
+          navigation.navigate("Home");
+        }}
+      />
+      <Button
+        title="Register"
+        onPress={() => {
+          navigation.navigate("Register");
+        }}
+      />
+      <Text>{"store: " + JSON.stringify(myStore)}</Text>
+    </View>
+  );
+};
+
+export default LoginScreen;
+
+const styles = StyleSheet.create({});
