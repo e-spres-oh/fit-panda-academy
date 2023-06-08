@@ -2,8 +2,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import FadeAnimationExample from './src/FadeAnimationExample';
 import SlideAnimationExample from './src/SlideAnimationExample';
 import RotationAnimationExample from './src/RotationAnimationExample';
-import SwipeableList from './src/SwipableList';
+
 import React from 'react';
+import SwipeableList from './src/SwipableList';
 
 export default function App() {
   return (

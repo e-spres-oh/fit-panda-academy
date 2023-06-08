@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, PanResponder, Animated } from 'react-native';
+import SwipeableListItem from './SwipableListItem';
 
 const SwipeableList = () => {
   // Sample data for the list
@@ -19,17 +20,6 @@ const SwipeableList = () => {
   );
 };
 
-const SwipeableListItem = ({ title }) => {
-  return (
-    <View style={styles.listItemContainer}>
-      <Text style={styles.listItemText}>{title}</Text>
-      {/* Delete button */}
-      <View style={styles.deleteButton}>
-        <Text style={styles.deleteButtonText}>Delete</Text>
-      </View>
-    </View>
-  );
-};
 
 const styles = StyleSheet.create({
   container: {
